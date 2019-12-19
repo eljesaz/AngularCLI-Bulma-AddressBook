@@ -1,0 +1,28 @@
+<section class="hero is-warning is-bold">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title">Contact Us</h1>
+        </div>
+    </div>
+</section>
+<section class="section">
+    <div class="container">
+        <form (ngSubmit)="processForm()">
+            <!-- name, email, message, submit button-->
+            <div class="field">
+                <input type="text" name="person.name" class="input" placeholder="Your Name:" [(ngModel)]="person.name" required #nameInput="ngModel">
+                <div class="help is-error " *ngIf="nameInput.invalid && nameInput.dirty " minlength="3">Your name is required.
+                </div>
+            </div>
+            <div class="field ">
+                <input type="email " name="person.email " class="input " placeholder="Your e-Mail: " [(ngModel)]="person.email " required #emailInput="ngModel">
+                <div class="help is-error " *ngIf="emailInput.invalid && emailInput.dirty " minlength="3">Your email is required.
+                </div>
+            </div>
+            <div class="field ">
+                <textarea class="textarea " name="person.message " placeholder="Anything to add? " [(ngModel)]="person.message "></textarea >
+            </div>
+            <button type="submit" class="button is-dark is-large" >Submit</button>
+        </form>
+    </div>
+</section>

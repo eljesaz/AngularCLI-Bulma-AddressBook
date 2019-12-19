@@ -1,0 +1,50 @@
+<section class="hero is-info is-fullheight is-bold">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title">
+                Home page
+            </h1>
+            <table class="table is-bordered is-fullwidth is-hoverable">
+                <tr>
+                    <th>Name:</th>
+                    <th>E-mail:</th>
+                    <th>Message:</th>
+                    <th>Action:</th>
+                </tr>
+                <ng-container *ngFor="let person of people">
+
+                    <tr>
+                        <td>
+                            <h2>{{person.name}}</h2>
+                        </td>
+                        <td>
+                            <h2>{{person.email}}</h2>
+                        </td>
+                        <td>
+                            <h2>{{person.message}}</h2>
+                        </td>
+                        <td>
+                            <button (click)="toggleModal($event, person._id)" class="button is-warning is-rounded">Delete</button>
+                        </td>
+                    </tr>
+                </ng-container>
+            </table>
+        </div>
+    </div>
+</section>
+<div class="modal" [ngClass]="{ 'is-active' : isModalActive }">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+        <header class="modal-card-head">
+            <p class="modal-card-title">Initiated deletion of user</p>
+            <button class="delete" aria-label="close"></button>
+        </header>
+        <section class="modal-card-body">
+            Are you sure you want to delete user? The action cannot be undone.
+        </section>
+        <footer class="modal-card-foot">
+            <button class="button is-success" (click)="deletePerson($event, selectedIdForCRUD)">Save changes</button>
+            <button class="button" (click)="toggleModal($event, '*')">Cancel</button>
+        </footer>
+    </div>
+</div>

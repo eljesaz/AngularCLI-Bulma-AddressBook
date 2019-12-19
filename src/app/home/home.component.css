@@ -1,0 +1,9 @@
+.hero {
+    background-image: url('src\assets\backgroud.jpg') !important;
+    background-size: cover;
+    background-position: center center;
+}
+
+table {
+    opacity: 50%;
+}
