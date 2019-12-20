@@ -1,7 +1,10 @@
 .hero {
-    background: url('src/assets/backgroud.jpg') !important;
-    background-size: cover;
+    background: url('src/assets/background.jpg') no-repeat center !important;
+    background-size: 100% 100%;
     background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
 }
 
 table {
