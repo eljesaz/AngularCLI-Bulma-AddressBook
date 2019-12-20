@@ -20,9 +20,36 @@
                 </div>
             </div>
             <div class="field ">
-                <textarea class="textarea " name="person.message " placeholder="Anything to add? " [(ngModel)]="person.message "></textarea >
+                <textarea class="textarea " name="person.message " placeholder="Anything to add? " [(ngModel)]="person.message "></textarea>
             </div>
-            <button type="submit" class="button is-dark is-large" >Submit</button>
+            <button type="submit" class="button is-dark is-large">Submit</button>
         </form>
     </div>
 </section>
+
+<div class="modal" [ngClass]="{ 'is-active' : isSuccessModalActive }">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+        <header class="modal-card-head">
+            <p class="modal-card-title">Success!</p>
+            <button class="delete" aria-label="close" (click)="toggleSuccessModal()"></button>
+        </header>
+        <section class="modal-card-body">
+            The person has been successfully added!
+        </section>
+
+    </div>
+</div>
+<div class="modal" [ngClass]="{ 'is-active' : isFailureModalActive }">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+        <header class="modal-card-head">
+            <p class="modal-card-title">Failed attempt</p>
+            <button class="delete" aria-label="close" (click)="toggleFailureModal()"></button>
+        </header>
+        <section class="modal-card-body">
+            The form has invalid data!
+        </section>
+
+    </div>
+</div>
